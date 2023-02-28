@@ -8,8 +8,7 @@
 - `grid` is rectangular, with its `width` and `height` not exceeding `100`
 - The `grid` is completely surrounded by water
 - There is only one island (or nothing).
-- The island doesn’t have “lakes” (water inside that isn’t connected to the water surrounding the island).
-
+- The island doesn’t have “lakes” (water inside that isn’t connected to the water 
 ```
 $ cat 0-main.py
 #!/usr/bin/python3
@@ -36,8 +35,8 @@ $
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Auther: Abinet Tesfu
-Email: abinatmail@gmail.com
-Date: 2022-08-19
+Auther: milibefk
+Email: milibefk@gmail.com
+Date: 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
