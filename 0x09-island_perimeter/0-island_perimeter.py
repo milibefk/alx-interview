@@ -1,42 +1,19 @@
-> Create a function def island_perimeter(grid): that returns the perimeter of the island described in grid:
-
-- `grid` is a list of list of integers:
-- `0` represents water
-- `1` represents land
-- Each cell is square, with a side length of `1`
-- Cells are connected horizontally/vertically (not diagonally).
-- `grid` is rectangular, with its `width` and `height` not exceeding `100`
-- The `grid` is completely surrounded by water
-- There is only one island (or nothing).
-- The island doesn’t have “lakes” (water inside that isn’t connected to the water 
-```
-$ cat 0-main.py
 #!/usr/bin/python3
-"""
-0-main
-"""
-island_perimeter = __import__('0-island_perimeter').island_perimeter
+"""returns the perimeter of the island described in grid"""
 
-if __name__ == "__main__":
-    grid = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0]
-    ]
-    print(island_perimeter(grid))
 
-$ 
-$ ./0-main.py
-12
-$ 
-```
+def island_perimeter(grid):
+    """returns the perimeter of the island described in grid"""
+    perimeter = 0
+    for i in range(len(grid)):
+        for j in range(len(grid[i])):
+            if grid[i][j] == 1:
+                perimeter += 4
+                # cells with 2 sides touching other cells on top and bottom
+                if i > 0 and grid[i - 1][j] == 1:
+                    perimeter -= 2
+                # cells with 2 sides touching other cells left and right
+                if j > 0 and grid[i][j - 1] == 1:
+                    perimeter -= 2
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Auther: milibefk
-Email: milibefk@gmail.com
-Date: 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    return perimeter
